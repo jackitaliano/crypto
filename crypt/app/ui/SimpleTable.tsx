@@ -17,14 +17,13 @@ export function SimpleTable({ tableName, entries }: Props) {
 
 	return (
 		<Table className="w-full h-full">
-			<TableCaption>{ tableName }</TableCaption>
 			<TableHeader>
 			</TableHeader>
 			<TableBody>
 				{entries.map((entry: string, i: number) => 
 						<TableRow>
-							<TableCell className="p-1">{i}</TableCell>
-							<TableCell className="p-1">{entry}</TableCell>
+							<TableCell className="w-16 p-1">{i}</TableCell>
+							<TableCell className="w-full p-1">{entry}</TableCell>
 						</TableRow>
 					)}
 			</TableBody>

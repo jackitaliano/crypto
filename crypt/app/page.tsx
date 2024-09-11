@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { CaesarShift, Selecter, TextInput } from "./ui";
+import { CaesarShift, FrequencyAnalysis, Selecter, TextInput } from "./ui";
+import { ENGLISH } from "./util/alphabets";
 
 export default function App() {
   const options = [
@@ -44,7 +45,7 @@ export default function App() {
         : ""
       }
       <div className={selectedOption == "frequency" ? "block" : "hidden"}>
-        <h1>Frequency</h1>
+        <FrequencyAnalysis alphabet={ENGLISH} ciphertext={ciphertext}/>
       </div>
     </div>
   );
