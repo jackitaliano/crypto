@@ -18,10 +18,7 @@ export function CaesarShift({ ciphertext }: Props) {
     }
 
     const shifts: Array<string> = enumerateShift(ciphertext, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    console.log("set shifted")
     setShifted(shifts);
-    console.log("shifted:")
-    console.log(shifts)
   }, [ ciphertext ]);
 
   return (

@@ -21,7 +21,7 @@ export function SimpleTable({ tableName, entries }: Props) {
 			</TableHeader>
 			<TableBody>
 				{entries.map((entry: string, i: number) => 
-						<TableRow>
+						<TableRow key={i}>
 							<TableCell className="w-16 p-1">{i}</TableCell>
 							<TableCell className="w-full p-1">{entry}</TableCell>
 						</TableRow>

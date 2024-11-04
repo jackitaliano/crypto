@@ -22,7 +22,7 @@ import {
 export function Selecter({ placeholder, options, updateOption }: Props) {
 	return (
 		<Select onValueChange={updateOption}>
-			<SelectTrigger className="w-[180px]">
+			<SelectTrigger className="w-[180px] bg-black">
 				<SelectValue placeholder={placeholder} />
 			</SelectTrigger>
 			<SelectContent>

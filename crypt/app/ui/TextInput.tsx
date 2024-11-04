@@ -18,7 +18,7 @@ export function TextInput({ inputName, updateFunction }: TextInputProps) {
   return (
     <div className="w-128 h-10 flex gap-2 items-center">
       <p>{inputName}:</p>
-        <Input name="ciphertextInput" onChange={updateCiphertext}/>
+        <Input name="ciphertextInput" className="bg-black" onChange={updateCiphertext}/>
       </div>
   );
 }
