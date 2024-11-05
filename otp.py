@@ -42,21 +42,37 @@ cipher3 = "ISWEYBWYYQJABYVOLNCNXBKNRIAGSEVGWMDXSZVZBTCWRDESBRCAHFEFDUVMFJKZXEHTL
 
 pos = input("Position: ")
 if len(pos) == 0:
-    pos = 63
+    pos = 115
 else:
     pos = int(pos)
 
 crib_input = ""
+crib = ""
+cipher = cipher1
 
 while True:
     crib_input = input("Crib: ")
+
+    if crib_input == "+":
+        pos += 1
+        crib_input = crib[1:]
+
+    if crib_input == "1":
+        cipher = cipher1
+        continue
+    elif crib_input == "2":
+        cipher = cipher2
+        continue
+    elif crib_input == "3":
+        cipher = cipher3
+        continue
 
     if len(crib_input) == 0:
         break
 
     crib = crib_input.upper()
 
-    key_candidates = get_crib_keys(cipher1, crib)
+    key_candidates = get_crib_keys(cipher, crib)
 
     key_pos, key_frag = key_candidates[pos]
 
