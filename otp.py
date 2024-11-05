@@ -42,7 +42,7 @@ cipher3 = "ISWEYBWYYQJABYVOLNCNXBKNRIAGSEVGWMDXSZVZBTCWRDESBRCAHFEFDUVMFJKZXEHTL
 
 pos = input("Position: ")
 if len(pos) == 0:
-    pos = 115
+    pos = 137
 else:
     pos = int(pos)
 
@@ -50,8 +50,19 @@ crib_input = ""
 crib = ""
 cipher = cipher1
 
+key = "MLSNUTJYNFQTXQTQEJRCFBTJFKMTOLNUSXDUABHFOTKDTZYMQNKILFNTCJHYCRCSXJDEAMASWLZISTQGNGLOMIOYADGQJDUWEJARQWTFRXQYLLSXLZBHZWZHWRNJBLXQZQOMSLDTURFOIFOWESJZQGM"
+
 while True:
     crib_input = input("Crib: ")
+
+    if crib_input == "v":
+        partial1 = decrypt_partial(cipher1, key, 0)
+        partial2 = decrypt_partial(cipher2, key, 0)
+        partial3 = decrypt_partial(cipher3, key, 0)
+        print("Decrypt 1:", partial1)
+        print("Decrypt 2:", partial2)
+        print("Decrypt 3:", partial3)
+        continue
 
     if crib_input == "+":
         pos += 1
